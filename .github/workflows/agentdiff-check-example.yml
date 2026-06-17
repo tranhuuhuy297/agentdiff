@@ -1,0 +1,38 @@
+# EXAMPLE workflow for ADOPTERS — copy into your own repo.
+# Gates a freshly-produced agent run against a committed golden trace and fails
+# the build if the trajectory drifts beyond policy. Rename to e.g. agent-eval.yml.
+name: agentdiff-check-example
+
+on:
+  pull_request:
+
+jobs:
+  golden-trace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install agentdiff
+
+      # Replace this with the command that produces your agent's run as JSONL/OTel.
+      # Here we just reuse the committed example to show the gate working.
+      - name: Produce new run
+        run: cp examples/trace-a.jsonl new-run.jsonl
+
+      - name: Gate against golden trace
+        run: |
+          agentdiff check new-run.jsonl \
+            --golden examples/golden-trace.jsonl \
+            --max-cost-delta-pct 10 --max-token-delta-pct 20 \
+            --json verdict.json --report-html drift.html
+
+      - name: Upload drift report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agentdiff-drift
+          path: |
+            verdict.json
+            drift.html

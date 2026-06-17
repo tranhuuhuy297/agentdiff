@@ -1,0 +1,36 @@
+{
+  "id": "trace-hanoi-weather",
+  "name": "weather-agent",
+  "observations": [
+    {
+      "type": "GENERATION",
+      "name": "plan",
+      "startTime": "2026-06-17T09:00:00.000Z",
+      "input": "Find the current weather in Hanoi and tell me if I need an umbrella.",
+      "output": "I'll search the web for Hanoi weather.",
+      "usage": {"input": 40, "output": 22},
+      "calculatedTotalCost": 0.0009,
+      "latency": 480
+    },
+    {
+      "type": "TOOL",
+      "name": "search_web",
+      "toolName": "search_web",
+      "startTime": "2026-06-17T09:00:00.600Z",
+      "input": {"query": "Hanoi weather today"},
+      "output": "Top result: Hanoi 32C, sunny, 0% chance of rain.",
+      "usage": {"input": 0, "output": 0},
+      "calculatedTotalCost": 0.0,
+      "latency": 310
+    },
+    {
+      "type": "GENERATION",
+      "name": "answer",
+      "startTime": "2026-06-17T09:00:01.000Z",
+      "output": "It's 32C and sunny in Hanoi with no rain expected — you won't need an umbrella.",
+      "usage": {"input": 70, "output": 30},
+      "calculatedTotalCost": 0.0014,
+      "latency": 610
+    }
+  ]
+}

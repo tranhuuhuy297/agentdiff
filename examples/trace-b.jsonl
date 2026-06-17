@@ -1,0 +1,5 @@
+{"step": 0, "role": "user", "content": "Find the current weather in Hanoi and tell me if I need an umbrella.", "tokens_in": 18, "tokens_out": 0, "cost": 0.0001, "latency_ms": 2}
+{"step": 1, "role": "assistant", "content": "I'll call the weather API for Hanoi.", "tool_name": "get_weather", "tool_args": {"city": "Hanoi"}, "tokens_in": 38, "tokens_out": 19, "cost": 0.0011, "latency_ms": 240}
+{"step": 2, "role": "tool", "content": "get_weather -> {temp_c: 31, condition: 'partly cloudy', rain_chance: 0.3}", "tool_name": "get_weather", "tokens_in": 0, "tokens_out": 0, "cost": 0.0, "latency_ms": 120}
+{"step": 3, "role": "assistant", "content": "I should double-check the rain chance before answering.", "tokens_in": 60, "tokens_out": 24, "cost": 0.0012, "latency_ms": 400}
+{"step": 4, "role": "assistant", "content": "It's 31C and partly cloudy in Hanoi with a 30% chance of rain — bring a small umbrella to be safe.", "tokens_in": 85, "tokens_out": 38, "cost": 0.0019, "latency_ms": 720}

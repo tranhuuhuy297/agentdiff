@@ -1,0 +1,36 @@
+{
+  "resourceSpans": [
+    {
+      "scopeSpans": [
+        {
+          "spans": [
+            {
+              "name": "chat gpt-4o",
+              "startTimeUnixNano": "1000000000",
+              "endTimeUnixNano": "1480000000",
+              "attributes": [
+                {"key": "gen_ai.system", "value": {"stringValue": "openai"}},
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "assistant"}},
+                {"key": "gen_ai.completion", "value": {"stringValue": "I'll search the web for Hanoi weather."}},
+                {"key": "gen_ai.tool.name", "value": {"stringValue": "search_web"}},
+                {"key": "gen_ai.tool.arguments", "value": {"stringValue": "{\"query\": \"Hanoi weather today\"}"}},
+                {"key": "gen_ai.usage.input_tokens", "value": {"intValue": 40}},
+                {"key": "gen_ai.usage.output_tokens", "value": {"intValue": 22}}
+              ]
+            },
+            {
+              "name": "tool search_web",
+              "startTimeUnixNano": "1500000000",
+              "endTimeUnixNano": "1810000000",
+              "attributes": [
+                {"key": "gen_ai.operation.name", "value": {"stringValue": "tool"}},
+                {"key": "gen_ai.tool.name", "value": {"stringValue": "search_web"}},
+                {"key": "gen_ai.completion", "value": {"stringValue": "Top result: Hanoi 32C, sunny, 0% chance of rain."}}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
