@@ -85,7 +85,7 @@ README.md ── quickstart + demo.gif + formats + CI usage + local-first framin
 - [x] ci.yml (ruff + pytest matrix + build)
 - [x] release.yml (OIDC trusted publishing on tag)
 - [x] README finalize + CHANGELOG  _(demo.gif deferred — optional asset)_
-- [ ] tag v0.1.0 + publish verified  _(user-gated: requires `git tag v0.1.0` push → release.yml OIDC publish to PyPI)_
+- [x] tag v0.1.0 pushed  _(PyPI publish intentionally skipped by user; release.yml Trusted Publisher not configured)_
 
 ## Success Criteria
 - `pytest` green on py3.11–3.13; core coverage ≥80%.
