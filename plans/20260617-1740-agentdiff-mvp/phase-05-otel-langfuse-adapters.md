@@ -7,7 +7,7 @@
 
 ## Overview
 - **Priority:** P2
-- **Status:** pending
+- **Status:** done
 - **Description:** Add two more input adapters so real-world exports drop in: OpenTelemetry GenAI
   spans (emerging standard) and Langfuse trace exports. Both normalize to the same `Trace` model.
 - **Parallelizable:** depends only on P1's data model + `base.py`. Touches only `adapters/` — can be
@@ -79,13 +79,13 @@ sort by timestamp → field-map via `normalize_step`. Exits: a `Trace` identical
 6. `ruff` + `pytest` green.
 
 ## Todo List
-- [ ] OTel + Langfuse fixtures in examples/
-- [ ] load_otel (GenAI attr mapping + duration latency + ordering)
-- [ ] load_langfuse (observation flattening + usage/cost mapping)
-- [ ] get_loader registry + cli _detect_format + --format flag
-- [ ] tests: mapping / ordering / defaults / cross-adapter parity
-- [ ] README formats section
-- [ ] ruff + pytest green
+- [x] OTel + Langfuse fixtures in examples/
+- [x] load_otel (GenAI attr mapping + duration latency + ordering)
+- [x] load_langfuse (observation flattening + usage/cost mapping)
+- [x] get_loader registry + cli _detect_format + --format flag
+- [x] tests: mapping / ordering / defaults / cross-adapter parity
+- [x] README formats section
+- [x] ruff + pytest green
 
 ## Success Criteria
 - `agentdiff run.otlp.json other.otlp.json` produces a diff without format flags (auto-detected).

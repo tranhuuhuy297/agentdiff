@@ -6,7 +6,7 @@
 
 ## Overview
 - **Priority:** P2 (release gate over all prior phases)
-- **Status:** pending
+- **Status:** done
 - **Description:** Consolidate the test matrix, finalize packaging (wheel includes the HTML template),
   set up project CI, polish README + demo GIF, and publish `0.1.0` to PyPI. Definition of "released".
 
@@ -77,15 +77,15 @@ README.md ── quickstart + demo.gif + formats + CI usage + local-first framin
 8. Final `ruff` + `pytest` green across the matrix.
 
 ## Todo List
-- [ ] conftest.py shared fixtures
-- [ ] test_end_to_end.py (all formats + check exit codes)
-- [ ] coverage config + ≥80% core coverage
-- [ ] pyproject finalize (classifiers, URLs, wheel include template)
-- [ ] build + clean-venv install smoke (template ships)
-- [ ] ci.yml (ruff + pytest matrix + build)
-- [ ] release.yml (OIDC trusted publishing on tag)
-- [ ] demo.gif + README finalize + CHANGELOG
-- [ ] tag v0.1.0 + publish verified
+- [x] conftest.py shared fixtures
+- [x] test_end_to_end.py (all formats + check exit codes)
+- [x] coverage config + ≥80% core coverage
+- [x] pyproject finalize (classifiers, URLs, wheel include template)
+- [x] build + clean-venv install smoke (template ships)
+- [x] ci.yml (ruff + pytest matrix + build)
+- [x] release.yml (OIDC trusted publishing on tag)
+- [x] README finalize + CHANGELOG  _(demo.gif deferred — optional asset)_
+- [ ] tag v0.1.0 + publish verified  _(user-gated: requires `git tag v0.1.0` push → release.yml OIDC publish to PyPI)_
 
 ## Success Criteria
 - `pytest` green on py3.11–3.13; core coverage ≥80%.

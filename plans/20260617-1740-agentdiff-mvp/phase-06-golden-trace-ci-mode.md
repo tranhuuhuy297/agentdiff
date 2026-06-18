@@ -7,7 +7,7 @@
 
 ## Overview
 - **Priority:** P2 (the recurring-use angle LangSmith under-serves; the retention hook)
-- **Status:** pending
+- **Status:** done
 - **Description:** Save a reference ("golden") trajectory and diff every new run against it in CI;
   exit non-zero when the trajectory drifts beyond a configured threshold. Pure CLI, no service.
 
@@ -86,14 +86,14 @@ artifacts). Pure evaluation in `ci.evaluate`; I/O confined to cli + config loade
 8. `ruff` + `pytest` green.
 
 ## Todo List
-- [ ] config.py (tomllib discover + flag merge precedence)
-- [ ] ci.py Policy/Verdict/evaluate (honor available=False, divide-by-zero guard)
-- [ ] run_check (load→align→diff→evaluate→exit code + artifacts)
-- [ ] cli: check + golden commands mapping to typer.Exit
-- [ ] tests: pass/fail-structural/fail-cost/exit-codes/json + config precedence
-- [ ] example workflow + agentdiff.toml + golden fixture
-- [ ] README CI section
-- [ ] ruff + pytest green
+- [x] config.py (tomllib discover + flag merge precedence)
+- [x] ci.py Policy/Verdict/evaluate (honor available=False, divide-by-zero guard)
+- [x] run_check (load→align→diff→evaluate→exit code + artifacts)
+- [x] cli: check + golden commands mapping to typer.Exit
+- [x] tests: pass/fail-structural/fail-cost/exit-codes/json + config precedence
+- [x] example workflow + agentdiff.toml + golden fixture
+- [x] README CI section
+- [x] ruff + pytest green
 
 ## Success Criteria
 - `agentdiff check new.jsonl --golden golden.jsonl` exits 0 when identical, 1 when drifted past policy,

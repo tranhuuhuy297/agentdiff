@@ -7,7 +7,7 @@
 
 ## Overview
 - **Priority:** P1
-- **Status:** pending
+- **Status:** done
 - **Description:** Turn aligned pairs into a structured `DiffResult`: per-pair change
   classification, the first divergence point, and aggregate deltas (Δtokens, Δcost, Δlatency,
   Δtool-calls). This is the data the viewer and CI mode both render/consume.
@@ -73,14 +73,14 @@ sum per-side totals → subtract. Exits: `DiffResult` (and `.to_dict()` for seri
 8. `ruff` + `pytest` green.
 
 ## Todo List
-- [ ] Totals / Deltas / DiffResult dataclasses
-- [ ] _sum_totals + tool-call counting
-- [ ] compute_diff: deltas (B−A) + first_divergence_index + summary_counts
-- [ ] inline_text_diff for SUBSTITUTE pairs (difflib)
-- [ ] to_dict() JSON-safe serialization
-- [ ] available=False for all-zero metrics
-- [ ] tests: identical / insert / cost-absent / tool counts
-- [ ] ruff + pytest green
+- [x] Totals / Deltas / DiffResult dataclasses
+- [x] _sum_totals + tool-call counting
+- [x] compute_diff: deltas (B−A) + first_divergence_index + summary_counts
+- [x] inline_text_diff for SUBSTITUTE pairs (difflib)
+- [x] to_dict() JSON-safe serialization
+- [x] available=False for all-zero metrics
+- [x] tests: identical / insert / cost-absent / tool counts
+- [x] ruff + pytest green
 
 ## Success Criteria
 - Identical traces → `first_divergence_index is None`, every delta 0.

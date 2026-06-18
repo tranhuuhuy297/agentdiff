@@ -6,7 +6,7 @@
 
 ## Overview
 - **Priority:** P1 (blocks everything)
-- **Status:** pending
+- **Status:** done
 - **Description:** Stand up the repo, packaging, lint/test config, the canonical in-memory
   trace model, and the first input adapter (minimal JSONL). After this phase you can load and
   validate a trace file into `Trace(list[Step])`.
@@ -80,14 +80,14 @@ sort/dedupe → `Trace`. Exits: a validated `Trace` object (no rendering, no dif
 8. Run `ruff check .` and `pytest` — both green.
 
 ## Todo List
-- [ ] Repo tree + git init + LICENSE + .gitignore
-- [ ] pyproject.toml with extras + entry point
-- [ ] models.py (Step, Trace, TraceParseError)
-- [ ] adapters/base.py (Protocol + normalizers)
-- [ ] adapters/jsonl.py (load_jsonl)
-- [ ] examples/trace-a.jsonl + trace-b.jsonl
-- [ ] tests/test_jsonl_adapter.py
-- [ ] ruff + pytest green
+- [x] Repo tree + git init + LICENSE + .gitignore
+- [x] pyproject.toml with extras + entry point
+- [x] models.py (Step, Trace, TraceParseError)
+- [x] adapters/base.py (Protocol + normalizers)
+- [x] adapters/jsonl.py (load_jsonl)
+- [x] examples/trace-a.jsonl + trace-b.jsonl
+- [x] tests/test_jsonl_adapter.py
+- [x] ruff + pytest green
 
 ## Success Criteria
 - `pip install -e .` succeeds; `agentdiff --help` runs (even if stub).

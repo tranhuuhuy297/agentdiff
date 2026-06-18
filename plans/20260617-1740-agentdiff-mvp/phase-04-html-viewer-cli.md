@@ -7,7 +7,7 @@
 
 ## Overview
 - **Priority:** P1 (this is the shippable MVP — `agentdiff a.jsonl b.jsonl` → report)
-- **Status:** pending
+- **Status:** done
 - **Description:** Render a `DiffResult` into a single self-contained HTML file (two aligned columns,
   color-coded, divergence marker, delta banner) and wire the `agentdiff` CLI to load → align → diff →
   render/open. Also a `--terminal` colored text diff path.
@@ -86,14 +86,14 @@ Exits: an HTML file on disk (opened in browser) or colored text on stdout. I/O l
 8. `ruff` + `pytest` green.
 
 ## Todo List
-- [ ] Package + load `.j2` via importlib.resources
-- [ ] viewer.html.j2: banner + 2 columns + color codes + divergence anchor + row expand
-- [ ] render_html (jinja2) — embedded JSON, no external refs
-- [ ] render_terminal (rich) honoring availability
-- [ ] cli.py: typer app, adapter dispatch, write+open, flags
-- [ ] tests: render (no http refs, banner present) + cli (CliRunner exit codes)
-- [ ] README quickstart
-- [ ] ruff + pytest green
+- [x] Package + load `.j2` via importlib.resources
+- [x] viewer.html.j2: banner + 2 columns + color codes + divergence anchor + row expand
+- [x] render_html (jinja2) — embedded JSON, no external refs
+- [x] render_terminal (rich) honoring availability
+- [x] cli.py: typer app, adapter dispatch, write+open, flags
+- [x] tests: render (no http refs, banner present) + cli (CliRunner exit codes)
+- [x] README quickstart
+- [x] ruff + pytest green
 
 ## Success Criteria
 - `agentdiff examples/trace-a.jsonl examples/trace-b.jsonl` opens an HTML report showing two columns,

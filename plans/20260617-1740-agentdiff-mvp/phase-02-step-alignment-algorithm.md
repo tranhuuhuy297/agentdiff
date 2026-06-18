@@ -7,7 +7,7 @@
 
 ## Overview
 - **Priority:** P1 (the core "smart" part; the differentiator)
-- **Status:** pending
+- **Status:** done
 - **Description:** Align two `list[Step]` so reordered/inserted/deleted steps line up, using
   global sequence alignment (Needleman–Wunsch) scored by per-step similarity. Output is a list of
   aligned pairs: `(step_a|None, step_b|None, op)` where op ∈ match/substitute/insert/delete.
@@ -80,13 +80,13 @@ Enters: two `list[Step]`. Transforms: pairwise similarity → DP matrix → trac
 7. `ruff` + `pytest` green.
 
 ## Todo List
-- [ ] Op enum + AlignedPair
-- [ ] similarity.py lexical + blended (tool weighting)
-- [ ] needleman_wunsch core + traceback
-- [ ] align() with threshold-based MATCH/SUBSTITUTE
-- [ ] semantic_similarity (lazy fastembed, clear error if absent)
-- [ ] tests: identical / insert / reorder / delete
-- [ ] ruff + pytest green
+- [x] Op enum + AlignedPair
+- [x] similarity.py lexical + blended (tool weighting)
+- [x] needleman_wunsch core + traceback
+- [x] align() with threshold-based MATCH/SUBSTITUTE
+- [x] semantic_similarity (lazy fastembed, clear error if absent)
+- [x] tests: identical / insert / reorder / delete
+- [x] ruff + pytest green
 
 ## Success Criteria
 - Identical traces → every pair MATCH, zero gaps.
